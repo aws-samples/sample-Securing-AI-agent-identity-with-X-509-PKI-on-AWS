@@ -1,0 +1,287 @@
+<mxfile host="drawio.corp.amazon.com" modified="2026-08-06T00:27:12.364Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0" etag="gOKZI4oLOnINO7O67NRC" version="21.7.4" type="device">
+  <diagram name="PKI for AI - Architecture and Flow" id="pki-for-ai-flow">
+    <mxGraphModel dx="2219" dy="918" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;KeyFactor EJBCA PKI for AI &amp;mdash; certificate-backed identity for a multi-agent AI assistant&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;fontSize=18;fontColor=#232F3E;fontFamily=Amazon Ember;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="20" y="20" width="1200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Per-hop signed request envelopes (RSA-PSS proof-of-possession) &amp;bull; RFC 8693 downscoped OAuth token &amp;bull; user-signed delegation &amp;bull; fail-closed OCSP at every hop" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontColor=#666666;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="20" y="46" width="1400" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="aws-cloud" value="AWS Cloud (us-east-1)" style="points=[];shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;grStroke=1;verticalLabelPosition=top;verticalAlign=bottom;labelPosition=center;align=center;spacingTop=-4;rounded=1;arcSize=10;strokeColor=#232F3E;fillColor=none;fontStyle=1;fontSize=14;fontColor=#232F3E;strokeWidth=1.5;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="430" y="74" width="1490" height="741" as="geometry" />
+        </mxCell>
+        <mxCell id="local-host" value="Local Host &amp;mdash; Python processes (Streamlit UI, Strands agents, FastMCP server)" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#5A6B7B;strokeWidth=1;dashed=1;dashPattern=8 4;verticalAlign=top;align=left;spacingLeft=12;spacingTop=6;fontSize=12;fontStyle=1;fontColor=#5A6B7B;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="450" y="140" width="1210" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="user-icon" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3E;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=11;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.users;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="480" y="230" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="user-label" value="&lt;b&gt;User&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px;&quot; color=&quot;#666666&quot;&gt;Browser&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=top;spacingTop=2;fontSize=11;fontColor=#000000;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="450" y="292" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="streamlit" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ec2;fillColor=#ED7100;strokeColor=#ffffff;strokeWidth=2;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="700" y="230" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="streamlit-label" value="&lt;b&gt;Streamlit App&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px;&quot; color=&quot;#666666&quot;&gt;login &amp;bull; cert lifecycle&lt;br&gt;holds the user private key&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=top;spacingTop=2;fontSize=11;fontColor=#000000;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="630" y="292" width="200" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="orchestrator" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/png,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;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="930" y="230" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="orchestrator-label" value="&lt;b&gt;Orchestrator Agent&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px;&quot; color=&quot;#666666&quot;&gt;{user}_orchestrator-agent&lt;br&gt;signs every hand-off&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=top;spacingTop=2;fontSize=11;fontColor=#000000;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="860" y="292" width="200" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="mysql-agent" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/png,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;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="1160" y="230" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mysql-agent-label" value="&lt;b&gt;MySQL Agent&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px;&quot; color=&quot;#666666&quot;&gt;{user}_mysql-agent&lt;br&gt;verifies orchestrator envelope&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=top;spacingTop=2;fontSize=11;fontColor=#000000;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="1090" y="292" width="200" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="email-agent" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/png,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;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="1045" y="452" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="email-agent-label" value="&lt;b&gt;Email Agent&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px;&quot; color=&quot;#666666&quot;&gt;{user}_email-agent&lt;br&gt;verifies orchestrator envelope&lt;/font&gt;" style="text;html=1;align=right;verticalAlign=top;spacingTop=2;spacingRight=6;fontSize=11;fontColor=#000000;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="830" y="452" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="mcp-server" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ec2;fillColor=#ED7100;strokeColor=#ffffff;strokeWidth=2;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="1390" y="230" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mcp-server-label" value="&lt;b&gt;FastMCP Server&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px;&quot; color=&quot;#666666&quot;&gt;stdio subprocess&lt;br&gt;triple auth on every tool call:&lt;br&gt;token + agent envelope + user delegation&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=top;spacingTop=0;spacingLeft=6;fontSize=11;fontColor=#000000;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="1465" y="232" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="keycloak" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cognito;fillColor=#DD344C;strokeColor=#ffffff;strokeWidth=2;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="1760" y="230" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="keycloak-label" value="&lt;b&gt;Keycloak IDP&lt;/b&gt;&lt;font style=&quot;font-size:9px;&quot; color=&quot;#666666&quot;&gt; (EC2)&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px;&quot; color=&quot;#666666&quot;&gt;OAuth2 &amp;bull; RFC 8693 exchange&lt;br&gt;token introspection&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=top;spacingTop=2;fontSize=11;fontColor=#000000;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="1680" y="292" width="240" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="ejbca" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.certificate_manager;fillColor=#DD344C;strokeColor=#ffffff;strokeWidth=2;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="1760" y="464" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ejbca-label" value="&lt;b&gt;EJBCA Enterprise&lt;/b&gt;&lt;font style=&quot;font-size:9px;&quot; color=&quot;#666666&quot;&gt; (EC2)&lt;/font&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px;&quot; color=&quot;#666666&quot;&gt;PKI CA &amp;bull; pkcs10enroll &amp;bull; OCSP responder&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=bottom;fontSize=11;fontColor=#000000;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="1660" y="560" width="260" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="secrets-mgr" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.secrets_manager;fillColor=#DD344C;strokeColor=#ffffff;strokeWidth=2;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="585" y="655" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="secrets-mgr-label" value="&lt;b&gt;AWS Secrets Manager&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px;&quot; color=&quot;#666666&quot;&gt;user + agent P12 bundles, tokens&lt;br&gt;nothing on the filesystem&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=top;spacingTop=2;fontSize=11;fontColor=#000000;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="500" y="717" width="230" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="bedrock" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/png,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;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="815" y="655" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="bedrock-label" value="&lt;b&gt;Amazon Bedrock&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px;&quot; color=&quot;#666666&quot;&gt;Claude Sonnet 4.5 (configurable)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=top;spacingTop=2;fontSize=11;fontColor=#000000;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="740" y="717" width="210" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="ses" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/png,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;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="1045" y="655" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ses-label" value="&lt;b&gt;Amazon SES&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px;&quot; color=&quot;#666666&quot;&gt;email delivery&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=top;spacingTop=2;fontSize=11;fontColor=#000000;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="975" y="717" width="200" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="rds" value="" style="shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.rds;fillColor=#C925D1;strokeColor=#ffffff;strokeWidth=2;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="1400" y="655" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rds-label" value="&lt;b&gt;Amazon RDS MySQL&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:9px;&quot; color=&quot;#666666&quot;&gt;users table only&lt;br&gt;DDL / GRANT blocked&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=top;spacingTop=2;fontSize=11;fontColor=#000000;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="1330" y="717" width="220" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#232F3E;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Amazon Ember;" parent="1" source="user-icon" target="streamlit" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1-l" value="&lt;font style=&quot;background-color:#FFFFFF;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#232F3E&quot;&gt;1, 8&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Amazon Ember;" parent="e1" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#DD344C;strokeWidth=2;endArrow=block;endFill=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.886;entryY=0.471;entryDx=0;entryDy=0;fontFamily=Amazon Ember;entryPerimeter=0;" parent="1" source="streamlit" target="keycloak" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="745" y="110" />
+              <mxPoint x="1850" y="110" />
+              <mxPoint x="1850" y="260" />
+              <mxPoint x="1790" y="260" />
+              <mxPoint x="1790" y="258" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2-l" value="&lt;font style=&quot;background-color:#FFFFFF;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#DD344C&quot;&gt;2, 3&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Amazon Ember;" parent="e2" vertex="1" connectable="0">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint x="60" y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#DD344C;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontFamily=Amazon Ember;" parent="1" source="streamlit" target="ejbca" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="730" y="95" />
+              <mxPoint x="1890" y="95" />
+              <mxPoint x="1890" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3-l" value="&lt;font style=&quot;background-color:#FFFFFF;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#DD344C&quot;&gt;4, 5&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Amazon Ember;" parent="e3" vertex="1" connectable="0">
+          <mxGeometry x="-0.85" relative="1" as="geometry">
+            <mxPoint x="60" y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#3F8624;strokeWidth=2;endArrow=block;endFill=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Amazon Ember;" parent="1" source="streamlit" target="secrets-mgr" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="615" y="275" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4-l" value="&lt;font style=&quot;background-color:#FFFFFF;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#3F8624&quot;&gt;7&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Amazon Ember;" parent="e4" vertex="1" connectable="0">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <mxPoint x="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#ED7100;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Amazon Ember;" parent="1" source="streamlit" target="orchestrator" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5-l" value="&lt;font style=&quot;background-color:#FFFFFF;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#ED7100&quot;&gt;9&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Amazon Ember;" parent="e5" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#01A88D;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.35;exitDx=0;exitDy=0;entryX=0;entryY=0.35;entryDx=0;entryDy=0;fontFamily=Amazon Ember;" parent="1" source="orchestrator" target="mysql-agent" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6-l" value="&lt;font style=&quot;background-color:#FFFFFF;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#01A88D&quot;&gt;10&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Amazon Ember;" parent="e6" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#DD344C;strokeWidth=1.5;dashed=1;dashPattern=8 4;endArrow=block;endFill=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontFamily=Amazon Ember;" parent="1" source="mysql-agent" target="ejbca" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1305" y="275" />
+              <mxPoint x="1305" y="560" />
+              <mxPoint x="1790" y="560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7-l" value="&lt;font style=&quot;background-color:#FFFFFF;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#DD344C&quot;&gt;11&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Amazon Ember;" parent="e7" vertex="1" connectable="0">
+          <mxGeometry x="-0.55" relative="1" as="geometry">
+            <mxPoint x="14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#232F3E;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.35;exitDx=0;exitDy=0;entryX=0;entryY=0.35;entryDx=0;entryDy=0;fontFamily=Amazon Ember;" parent="1" source="mysql-agent" target="mcp-server" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8-l" value="&lt;font style=&quot;background-color:#FFFFFF;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#232F3E&quot;&gt;13&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Amazon Ember;" parent="e8" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#DD344C;strokeWidth=1.5;dashed=1;dashPattern=8 4;endArrow=block;endFill=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.33;entryDx=0;entryDy=0;fontFamily=Amazon Ember;" parent="1" source="mcp-server" target="keycloak" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1420" y="165" />
+              <mxPoint x="1730" y="165" />
+              <mxPoint x="1730" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9-l" value="&lt;font style=&quot;background-color:#FFFFFF;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#DD344C&quot;&gt;14&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Amazon Ember;" parent="e9" vertex="1" connectable="0">
+          <mxGeometry x="-0.35" relative="1" as="geometry">
+            <mxPoint y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#DD344C;strokeWidth=1.5;dashed=1;dashPattern=8 4;endArrow=block;endFill=1;exitX=0.9;exitY=1;exitDx=0;exitDy=0;fontFamily=Amazon Ember;" parent="1" source="mcp-server" target="ejbca" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1444" y="420" />
+              <mxPoint x="1790" y="420" />
+            </Array>
+            <mxPoint x="1902" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10-l" value="&lt;font style=&quot;background-color:#FFFFFF;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#DD344C&quot;&gt;15, 16&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Amazon Ember;" parent="e10" vertex="1" connectable="0">
+          <mxGeometry x="-0.3" relative="1" as="geometry">
+            <mxPoint x="30" y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#01A88D;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Amazon Ember;" parent="1" source="orchestrator" target="email-agent" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1075" y="275" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12-l" value="&lt;font style=&quot;background-color:#FFFFFF;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#01A88D&quot;&gt;19&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Amazon Ember;" parent="e12" vertex="1" connectable="0">
+          <mxGeometry x="0.3" relative="1" as="geometry">
+            <mxPoint x="14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#DD344C;strokeWidth=1.5;dashed=1;dashPattern=8 4;endArrow=block;endFill=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;fontFamily=Amazon Ember;" parent="1" source="email-agent" target="ejbca" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1105" y="485" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13-l" value="&lt;font style=&quot;background-color:#FFFFFF;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#DD344C&quot;&gt;20&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Amazon Ember;" parent="e13" vertex="1" connectable="0">
+          <mxGeometry x="-0.6" relative="1" as="geometry">
+            <mxPoint y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#232F3E;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Amazon Ember;" parent="1" source="email-agent" target="ses" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14-l" value="&lt;font style=&quot;background-color:#FFFFFF;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#232F3E&quot;&gt;21&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Amazon Ember;" parent="e14" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#01A88D;strokeWidth=1.5;dashed=1;dashPattern=8 4;endArrow=block;endFill=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Amazon Ember;" parent="1" source="orchestrator" target="bedrock" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="845" y="275" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15-l" value="&lt;font style=&quot;background-color:#FFFFFF;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#01A88D&quot;&gt;22&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Amazon Ember;" parent="e15" vertex="1" connectable="0">
+          <mxGeometry x="0.35" relative="1" as="geometry">
+            <mxPoint x="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="flow-box" value="" style="rounded=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#CCCCCC;strokeWidth=1;fontFamily=Amazon Ember;" parent="1" vertex="1">
+          <mxGeometry x="430" y="843" width="1495" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-title" value="&lt;b&gt;Traffic flow&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=13;fontColor=#232F3E;fontFamily=Amazon Ember;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="519" y="848" width="380" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-text" value="&lt;font style=&quot;font-size:10px;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#232F3E&quot;&gt;LOGIN &amp;amp; CREDENTIAL BOOTSTRAP&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#232F3E&quot;&gt;1.&lt;/font&gt;&lt;/b&gt; User signs in to Streamlit (password grant, or X.509 mTLS auto-login)&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#DD344C&quot;&gt;2.&lt;/font&gt;&lt;/b&gt; Keycloak password grant &amp;rarr; full-session OAuth token&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#DD344C&quot;&gt;3.&lt;/font&gt;&lt;/b&gt; RFC 8693 token exchange &amp;rarr; downscoped token (aud = mcp-server) for the agents&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#DD344C&quot;&gt;4.&lt;/font&gt;&lt;/b&gt; EJBCA pkcs10enroll &amp;rarr; user certificate (keypair generated locally, 7-day validity)&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#DD344C&quot;&gt;5.&lt;/font&gt;&lt;/b&gt; EJBCA pkcs10enroll &amp;rarr; three agent certificates: {user}_orchestrator-agent, {user}_mysql-agent, {user}_email-agent&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#999999&quot;&gt;6.&lt;/font&gt;&lt;/b&gt; &lt;i&gt;(in-process)&lt;/i&gt; Streamlit mints the user-signed delegation over the three agent-cert fingerprints &amp;mdash; the only use of the user private key&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#3F8624&quot;&gt;7.&lt;/font&gt;&lt;/b&gt; Store user + agent P12 bundles and the session token in Secrets Manager&lt;br&gt;&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#232F3E&quot;&gt;DATABASE QUERY &amp;mdash; TRIPLE AUTH&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#232F3E&quot;&gt;8.&lt;/font&gt;&lt;/b&gt; User asks a question in natural language&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#ED7100&quot;&gt;9.&lt;/font&gt;&lt;/b&gt; Streamlit hands the orchestrator the downscoped token + delegation (user key stays UI-side)&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#01A88D&quot;&gt;10.&lt;/font&gt;&lt;/b&gt; Orchestrator signs a request envelope with its own key (RSA-PSS PoP) &amp;rarr; MySQL Agent&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#DD344C&quot;&gt;11.&lt;/font&gt;&lt;/b&gt; MySQL Agent verifies it: PoP signature, freshness, nonce anti-replay, CA chain, role = orchestrator-agent, OCSP&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#999999&quot;&gt;12.&lt;/font&gt;&lt;/b&gt; &lt;i&gt;(in-process)&lt;/i&gt; MySQL Agent loads its own P12 and signs a per-call envelope bound to the exact {tool, args}&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#232F3E&quot;&gt;13.&lt;/font&gt;&lt;/b&gt; Spawns FastMCP Server over stdio; each call carries auth = {token, delegation, envelope} &amp;mdash; no keys, no credentials in the environment&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#DD344C&quot;&gt;14.&lt;/font&gt;&lt;/b&gt; MCP 1/3 &amp;mdash; Keycloak introspection: token active and aud contains mcp-server&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#DD344C&quot;&gt;15.&lt;/font&gt;&lt;/b&gt; MCP 2/3 &amp;mdash; verify the mysql-agent envelope: PoP, freshness, replay, CA chain, role = mysql-agent, OCSP; payload must equal this exact call&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#DD344C&quot;&gt;16.&lt;/font&gt;&lt;/b&gt; MCP 3/3 &amp;mdash; verify the user delegation: signature, expiry, calling-agent fingerprint, OCSP on the user cert&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#999999&quot;&gt;17.&lt;/font&gt;&lt;/b&gt; &lt;i&gt;(in-process)&lt;/i&gt; Identity cross-check: token username == delegation.sub == agent CN prefix&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#C925D1&quot;&gt;18.&lt;/font&gt;&lt;/b&gt; Execute SQL on RDS MySQL (users table only; DROP / TRUNCATE / ALTER / CREATE / GRANT / REVOKE blocked)&lt;br&gt;&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#232F3E&quot;&gt;EMAIL &amp;mdash; AGENT TO AGENT&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#01A88D&quot;&gt;19.&lt;/font&gt;&lt;/b&gt; Orchestrator signs a request envelope &amp;rarr; Email Agent&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#DD344C&quot;&gt;20.&lt;/font&gt;&lt;/b&gt; Email Agent verifies it (PoP + CA chain + role = orchestrator-agent + OCSP)&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#232F3E&quot;&gt;21.&lt;/font&gt;&lt;/b&gt; Email Agent sends the message through Amazon SES&lt;br&gt;&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#232F3E&quot;&gt;MODEL INFERENCE&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#01A88D&quot;&gt;22.&lt;/font&gt;&lt;/b&gt; All three agents run on Amazon Bedrock (Strands SDK)&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=top;spacingTop=4;spacingLeft=10;spacingRight=10;fontSize=10;fontColor=#000000;fontFamily=Amazon Ember;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="441" y="871" width="670" height="362" as="geometry" />
+        </mxCell>
+        <mxCell id="flow-sep" style="endArrow=none;html=1;strokeColor=#CCCCCC;strokeWidth=1;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="35" y="653" as="sourcePoint" />
+            <mxPoint x="385" y="653" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="notes-text" value="&lt;font style=&quot;font-size:10px;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#232F3E&quot;&gt;ALWAYS TRUE&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&amp;bull; Private keys never cross a trust boundary &amp;mdash; only public certs and signatures travel. Each component loads its own P12 from Secrets Manager and signs in-process.&lt;br&gt;&amp;bull; Every OCSP and introspection check &lt;b&gt;fails closed&lt;/b&gt;: an unreachable responder denies the request.&lt;br&gt;&amp;bull; Forward-only trust graph: MySQL and Email Agent accept only orchestrator-agent; the MCP server accepts only mysql-agent. No lateral agent calls.&lt;br&gt;&amp;bull; Lifetimes: certificates 7 days, delegation 12 hours, request envelopes 60 seconds.&lt;br&gt;&amp;bull; The downscoped token is short-lived; the MySQL Agent re-mints it on demand from stored session state (it never sees the full-session token).&lt;br&gt;&amp;bull; Logout revokes the user cert and all agent certs in EJBCA and deletes the secrets, invalidating every outstanding delegation.&lt;br&gt;&lt;br&gt;&lt;b&gt;&lt;font color=&quot;#232F3E&quot;&gt;LEGEND&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&amp;bull; Solid arrow = request / data path&lt;br&gt;&amp;bull; Dashed arrow = credential validation (OCSP, introspection) or model call&lt;br&gt;&amp;bull; Numbers on arrows map to the steps above; greyed steps are in-process and have no network hop.&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=top;spacingTop=4;spacingLeft=10;spacingRight=10;fontSize=10;fontColor=#000000;fontFamily=Amazon Ember;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="1175" y="851" width="658" height="272" as="geometry" />
+        </mxCell>
+        <mxCell id="v5eNqX5SJI5hlTBJsDKn-1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#C925D1;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Amazon Ember;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;entryX=0.5;entryY=0.083;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.529;exitY=0.829;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="mcp-server" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1430" y="280" />
+              <mxPoint x="1430" y="440" />
+            </Array>
+            <mxPoint x="1409" y="300" as="sourcePoint" />
+            <mxPoint x="1429" y="659.98" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5eNqX5SJI5hlTBJsDKn-2" value="&lt;font style=&quot;background-color:#FFFFFF;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#C925D1&quot;&gt;18&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Amazon Ember;" parent="v5eNqX5SJI5hlTBJsDKn-1" vertex="1" connectable="0">
+          <mxGeometry x="-0.5" relative="1" as="geometry">
+            <mxPoint x="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

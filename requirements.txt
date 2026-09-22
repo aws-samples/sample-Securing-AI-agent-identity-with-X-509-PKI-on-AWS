@@ -1,0 +1,13 @@
+strands-agents>=0.1.0
+strands-agents-tools>=0.1.0
+mcp>=1.0.0
+fastmcp>=2.13.0
+pymysql
+python-dotenv>=1.1.0
+streamlit
+boto3>=1.42.0
+botocore>=1.42.0
+cryptography
+requests
+urllib3
+pydantic>=2.0

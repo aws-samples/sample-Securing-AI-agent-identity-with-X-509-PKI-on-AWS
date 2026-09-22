@@ -1,0 +1,44 @@
+# Environment and secrets
+.env
+*.p12
+*.pem
+
+# Certificates directory (keep README only)
+certs/*
+!certs/README.md
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+venv/
+.venv/
+env/
+.Python
+pip-log.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.kiro/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Streamlit
+.streamlit/
+
+# Session history (contains sensitive context)
+previous-sessions/
+
+# Artifacts (may contain sensitive data)
+artifacts/
+
+# Temp files
+*.tmp
+*.temp
