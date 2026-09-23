@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # KeyFactor EJBCA PKI for AI
 
 AI Database Assistant demo with triple certificate-based authentication using KeyFactor EJBCA PKI, Keycloak IDP, and AWS Bedrock.
@@ -468,5 +467,3 @@ See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more inform
 ## License
 
 This library is licensed under the MIT-0 License. See the LICENSE file.
-
->>>>>>> f1df1a6173d67526a481912a012e94dc2ee9051c
