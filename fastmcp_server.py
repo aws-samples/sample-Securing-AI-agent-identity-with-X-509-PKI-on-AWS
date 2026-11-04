@@ -187,12 +187,12 @@ def _validate_identifier(name: str, allowed: frozenset, label: str) -> bool:
 
 @mcp.tool()
 def query_users(
-    columns: list[str] = None,
-    where_column: str = None,
-    where_value: str = None,
+    columns: list[str] | None = None,
+    where_column: str | None = None,
+    where_value: str | None = None,
     limit: int = 100,
     count_only: bool = False,
-    auth: dict = None
+    auth: dict | None = None
 ) -> str:
     """Query the users table with parameterized, safe SQL execution.
 
